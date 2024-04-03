@@ -12,6 +12,7 @@ function App() {
       return false;
     }
   })
+  
 console.log(loggedIn)
 
 useEffect(() => {
@@ -39,8 +40,8 @@ const logoutHandler = () => {
 return (
   <Fragment>
       <MainHeader isAuthenticated={loggedIn} onLogout={logoutHandler}/>
-      <main>{
-        !loggedIn && <Login onLogin={loginHandler}/>}
+      <main>
+        {!loggedIn && <Login onLogin={loginHandler}/>}
         {loggedIn && <Home/>}
       </main>
     </Fragment>
